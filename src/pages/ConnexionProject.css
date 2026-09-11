@@ -1,0 +1,231 @@
+    /* ============================
+   The ConneXion Case Study
+   Styled with the clean blue and white theme.
+============================ */
+ 
+.driftveil-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  color: #2c2c40;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+ 
+/* ---------- Hero ---------- */
+.driftveil-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid #e0e4e8;
+  margin-bottom: 2.5rem;
+}
+ 
+@media (max-width: 900px) {
+  .driftveil-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+ 
+.driftveil-eyebrow {
+  display: inline-block;
+  background: #f0f5fa;
+  color: #5b9fd1;
+  border: 1px solid #d4e3f0;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+ 
+.driftveil-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+}
+ 
+@media (max-width: 768px) {
+  .driftveil-title {
+    font-size: 1.75rem;
+  }
+}
+ 
+.driftveil-tagline {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #4a4a6a;
+  margin: 0 0 1.75rem 0;
+  max-width: 800px;
+}
+ 
+.driftveil-hero-links {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+ 
+.driftveil-btn {
+  text-decoration: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block;
+}
+ 
+.driftveil-btn-primary {
+  background: #5b9fd1;
+  color: white;
+  box-shadow: 0 4px 14px rgba(91, 159, 209, 0.35);
+}
+ 
+.driftveil-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(91, 159, 209, 0.45);
+}
+ 
+.driftveil-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f7 100%);
+  color: #5b9fd1;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid #d4e3f0;
+}
+ 
+.driftveil-hero-image img {
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid #d4e3f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+ 
+/* ---------- Sections Shared ---------- */
+.driftveil-section {
+  padding: 2rem 0;
+  border-bottom: 1px solid #e0e4e8;
+}
+ 
+.driftveil-section:last-of-type {
+  border-bottom: none;
+}
+ 
+.driftveil-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5b9fd1;
+  margin: 0 0 1.5rem 0;
+}
+ 
+.driftveil-body-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #4a4a6a;
+  max-width: 850px;
+}
+ 
+/* ---------- Features / Cards Grid ---------- */
+.driftveil-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+ 
+.driftveil-feature-card {
+  background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f7 100%);
+  border: 1px solid #d4e3f0;
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.driftveil-feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(91, 159, 209, 0.15);
+}
+ 
+.driftveil-feature-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+ 
+.driftveil-feature-card p {
+  margin: 0;
+  color: #4a4a6a;
+  font-size: 0.925rem;
+  line-height: 1.6;
+}
+ 
+/* ---------- Gallery ---------- */
+.driftveil-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+ 
+.driftveil-gallery-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #d4e3f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease;
+}
+ 
+.driftveil-gallery-item img:hover {
+  transform: scale(1.01);
+}
+ 
+/* ---------- Tech Stack / Pills ---------- */
+.driftveil-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+ 
+.driftveil-tech-pill {
+  background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f7 100%);
+  color: #5b9fd1;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #d4e3f0;
+}
+ 
+/* ---------- Back Link ---------- */
+.driftveil-back-link-wrapper {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e4e8;
+}
+ 
+.driftveil-back-link {
+  color: #5b9fd1;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+ 
+.driftveil-back-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,118 @@
+[
+  {
+    "id": 4,
+    "title": "Driftveil City — Interactive 3D World",
+    "path": "/projects/driftveil",
+    "shortDescription": "An interactive 3D recreation of Driftveil City from Pokémon Black & White, featuring custom-modelled static buildings, minigames, and a pokeball physics playground.",
+    "description": "This project reimagines Driftveil City as an interactive 3D scene built with React Three Fiber. Rather than using pre-animated characters, the environment features custom 3D models of the city's most iconic static buildings built from scratch. Clicking on different buildings opens quizzes and minigames tied to the location. A separate 'drop pokeballs' mode uses Rapier physics to scatter pokeballs across the city with realistic falling and collision behavior. A small in-scene configurator lets you switch between the Driftveil City theme, ambient wind sound, or no music, and reset your quiz progress at any time. The site also features a custom landing page and UI styled after Pokémon Black & White 2, complete with Reshiram and Zekrom artwork and site credits.",
+    "tech": [
+      "React",
+      "Three.js",
+      "React Three Fiber",
+      "Rapier",
+      "Vite"
+    ],
+    "image": "/Driftveil/Screenshot1-Noivern.png",
+    "gallery": [
+      "/Driftveil/Screenshot1-Noivern.png",
+      "/Driftveil/Screenshot2-Ditto.png",
+      "/Driftveil/Screenshot3-Scizor.png"
+    ],
+    "links": {
+      "github": "https://github.com/Simonvt1412/driftveil-city-website.git",
+      "live": "https://driftveil-city-website.vercel.app/"
+    }
+  },
+  {
+    "id": 5,
+    "title": "E-Waste Shadow Trail",
+    "path": "/projects/ewaste-trail",
+    "shortDescription": "An award-winning interactive coastal walk concept—strictly a conceptual idea with no further technical elaboration or realization.",
+    "description": "Developed collaboratively as a team for the 2nd-year Graphic and Digital Media hackathon edition with The Cronos Group, winning 1st place. Please note: this project was purely an idea and strategic concept, with no technical implementation, physical building, or further elaboration. It proposes an interactive walking and cycling route featuring art installations shaped like floating e-waste, utilizing solar-powered sensors, QR codes, and a gamified companion app framework.",
+    "tech": [
+      "Concept Strategy",
+      "UX/UI Design",
+      "Physical Computing",
+      "Sensor Integration",
+      "Mobile App Concept"
+    ],
+    "image": "HTF/htf.jpg",
+    "gallery": [
+      "/EWaste/Hero-Trail.png",
+      "/EWaste/Concept-Water.png",
+      "/EWaste/Interaction-People.png"
+    ],
+    "links": {
+      "github": "",
+      "live": ""
+    }
+  },
+  {
+    "id": 6,
+    "title": "Vondelmolen Student Campaign",
+    "path": "/projects/vondelmolen",
+    "shortDescription": "A collaborative marketing campaign concept and storytelling website targeting students with traditional Vondelmolen gingerbread.",
+    "description": "Developed collaboratively in a team of 6 for an end-of-year exam, this project introduces a fresh marketing campaign concept positioning Vondelmolen gingerbread as the ideal study snack and energy boost for students. To bring the concept to life for the exam evaluation, we built a dedicated storytelling website (vondelmolen.vercel.app) that outlines the campaign strategy, slogan iterations, visual mockups, and target audience insights.",
+    "tech": [
+      "Concept Strategy",
+      "Marketing",
+      "Web Design",
+      "Storytelling",
+      "UI/UX"
+    ],
+    "image": "/Vondelmolen/vm.jpg",
+    "gallery": [],
+    "links": {
+      "github": "",
+      "live": "https://vondelmolen.vercel.app/"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Beestige Tijdreizigers",
+    "path": "/projects/beestige-tijdreizigers",
+    "shortDescription": "An interactive wooden racing installation with prehistoric animals and RFID technology for Huis van Kina, developed by Team Quartz.",
+    "description": "Developed in collaboration with Team Quartz for Digital Product Studio 1, we created 'Beestige Tijdreizigers' as a commissioned project for Huis van Kina. The project consists of a physical, interactive race box approximately 110x60 cm where visitors race scaled prehistoric animals (such as the saber-toothed tiger and mammoth) against each other using RFID cards and a physical start button. My responsibilities included hardware implementation, configuring the Raspberry Pi 5 (8GB) and Grove speaker for audio feedback, developing a Python Flask server with multithreading, and integrating stepper motors and microswitches.",
+    "tech": [
+      "Raspberry Pi",
+      "Arduino",
+      "Hardware Integration",
+      "Physical Computing"
+    ],
+    "image": "/Kina/kina_logo.png",
+    "gallery": [
+      "/Kina/image.png",
+      "/Kina/Kina.jpg"
+    ],
+    "links": {
+      "github": "",
+      "live": ""
+    }
+  },
+{
+  "id": 8,
+  "title": "The ConneXion",
+  "path": "/projects/connexion",
+  "shortDescription": "An interactive exoplanet-discovery installation built with Team Ruimteverkenners for Floraliën Gent 2026, using a physical telescope to explore a generative 3D starfield.",
+  "description": "Built for Floraliën Gent 2026 as part of Digital Product Studio 2, 'The ConneXion' invites visitors to search a generative, projected starry sky for potentially habitable exoplanets. A lensless telescope fitted with a gyroscope and rotary encoder lets visitors aim and zoom into the projection in real time, revealing scientific data on a second screen when a planet is discovered, framed around the concept of the habitable 'Goldilocks zone.' My contribution focused on building and wiring the LED strips throughout the installation, helping get an early version of the TouchDesigner visuals running, and modelling all of the 3D planets used in the starfield.",
+  "tech": [
+    "Arduino Nano 33 IoT",
+    "TouchDesigner",
+    "Gyroscope & Rotary Encoder",
+    "Addressable LED Strips",
+    "Next.js",
+    "PostgreSQL",
+    "WebSockets",
+    "Blender"
+  ],
+  "image": "/Connexion/Floralien-logo.png",
+  "gallery": [
+    "/Connexion/UI.png",
+    "/Connexion/Visual.png"
+  ],
+  "links": {
+    "github": "https://github.com/gdmgent-digitalproductstudio/dps2-project-1-ruimteverkenners",
+    "live": ""
+  }
+}
+]

@@ -1,0 +1,112 @@
+/* ProjectCard Styling */
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e0e4e8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.15);
+  border-color: #5b9fd1;
+}
+
+/* Image Placeholder */
+.project-image-placeholder {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7a7a9e;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+/* Add this to your existing ProjectCard.css — it makes real <img> tags
+   fill the same box the placeholder text currently sits in. */
+ 
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+
+/* Project Info */
+.project-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  color: #5b9fd1;
+  margin: 0 0 0.75rem 0;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.project-description {
+  color: #4a4a6a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+/* Tech Tags */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f7 100%);
+  color: #5b9fd1;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #d4e3f0;
+  box-shadow: 0 1px 3px rgba(91, 159, 209, 0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .project-image-placeholder {
+    height: 150px;
+  }
+
+  .project-info {
+    padding: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+}
