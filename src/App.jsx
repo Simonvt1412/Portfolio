@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import gsap from 'gsap';
+import BootScreen from './components/BootScreen';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import ProjectDetailPage from './pages/ProjectDetailPage';
@@ -128,6 +129,7 @@ function App() {
 
   return (
     <Router>
+      <BootScreen />
       <Navbar
         isLightMode={isLightMode}
         onThemeToggle={() => setIsLightMode((current) => !current)}

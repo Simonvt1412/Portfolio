@@ -1,0 +1,227 @@
+.is-booting {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}
+
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  color: #f7f5f2;
+  font-family: monospace;
+  background: #211f1d;
+  overflow: hidden;
+}
+
+.boot-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23211f1d'/%3E%3Ccircle cx='1' cy='1' r='.35' fill='%23a9a097' fill-opacity='.18'/%3E%3C/svg%3E");
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+
+.boot-half {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: #211f1d;
+  transition: transform 600ms steps(6, end);
+}
+
+.boot-half-top {
+  top: 0;
+  transform: translateY(0);
+}
+
+.boot-half-bottom {
+  bottom: 0;
+  transform: translateY(0);
+}
+
+.boot-seam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 1px);
+  z-index: 4;
+  height: 2px;
+  background: #d97757;
+  opacity: 0;
+}
+
+.boot-content {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: min(560px, calc(100% - 3rem));
+  height: fit-content;
+  margin: auto;
+  transform: translateY(-1.5rem);
+}
+
+.boot-title {
+  --ls: 0.12em;
+  width: 0;
+  height: 2.2rem;
+  margin: 0 0 2.5rem;
+  overflow: hidden;
+  border-right: 0.12em solid #f7f5f2;
+  color: #f7f5f2;
+  font-family: monospace;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: 900;
+  letter-spacing: var(--ls);
+  white-space: nowrap;
+  animation:
+    boot-title-type 1.35s steps(8, end) 0.15s forwards,
+    boot-title-caret 0.5s steps(1, end) 0.15s infinite;
+}
+
+.boot-title-accent {
+  color: #d97757;
+}
+
+.boot-logs {
+  display: grid;
+  gap: 0.65rem;
+  min-height: 5.25rem;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.boot-log {
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+.boot-log-one {
+  animation: boot-log-type 0.95s steps(31, end) 0.85s forwards;
+}
+
+.boot-log-two {
+  animation: boot-log-type 0.95s steps(29, end) 1.55s forwards;
+}
+
+.boot-log-three {
+  color: #f4b39b;
+  animation: boot-log-short 0.65s steps(18, end) 2.25s forwards;
+}
+
+.boot-progress {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4px;
+  width: 100%;
+  height: 28px;
+  margin-top: 2rem;
+  padding: 5px;
+  border: 2px solid #f7f5f2;
+}
+
+.boot-progress-block {
+  background: #3a3531;
+  animation: boot-block-light 85ms steps(1, end) forwards;
+  animation-delay: calc(900ms + var(--block-index) * 85ms);
+}
+
+.boot-hint {
+  position: fixed;
+  left: 50%;
+  bottom: 2.5rem;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 3rem);
+  z-index: 6;
+  color: #a9a097;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  visibility: hidden;
+  animation: boot-hint-show 0.01s steps(1, end) 0.5s forwards;
+}
+
+.boot-screen-exit .boot-content {
+  visibility: hidden;
+}
+
+.boot-screen-exit .boot-seam {
+  opacity: 1;
+}
+
+.boot-screen-exit .boot-half-top {
+  transform: translateY(-100%);
+}
+
+.boot-screen-exit .boot-half-bottom {
+  transform: translateY(100%);
+}
+
+@keyframes boot-title-type {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: calc(var(--chars) * (1ch + var(--ls)));
+  }
+}
+
+@keyframes boot-title-caret {
+  0%,
+  49% {
+    border-right-color: #f7f5f2;
+  }
+  50%,
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes boot-log-type {
+  0% {
+    width: 0;
+    visibility: visible;
+  }
+  100% {
+    width: 32ch;
+    visibility: visible;
+  }
+}
+
+@keyframes boot-log-short {
+  0% {
+    width: 0;
+    visibility: visible;
+  }
+  100% {
+    width: 18ch;
+    visibility: visible;
+  }
+}
+
+@keyframes boot-block-light {
+  to {
+    background: #d97757;
+  }
+}
+
+@keyframes boot-hint-show {
+  to {
+    visibility: visible;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-screen {
+    display: none;
+  }
+}
