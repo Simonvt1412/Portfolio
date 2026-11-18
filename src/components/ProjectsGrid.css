@@ -1,8 +1,8 @@
 /* Projects Section Styling */
 .projects-section {
-  background-color: #f5f7fa;
-  padding: 5rem 2rem;
-  border-bottom: 1px solid #e0e4e8;
+  background-color: #211f1d;
+  padding: 6rem 2rem;
+  border-bottom: 2px solid #272522;
 }
 
 .projects-container {
@@ -11,20 +11,85 @@
 }
 
 .projects-title {
-  font-size: 2.5rem;
-  color: #5b9fd1;
-  margin-top: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: #f7f5f2;
+  margin: 0;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: -0.06em;
+}
+
+.section-heading {
   margin-bottom: 3.5rem;
-  text-align: center;
+}
+
+.section-kicker {
+  color: #d97757;
+  font-family: monospace;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.section-note {
+  color: #a9a097;
+  margin-top: 1rem;
+  font-size: 1rem;
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 360px));
-  justify-content: center;
-  gap: 2rem;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  gap: 1rem 0.8rem;
+  padding: 1.5rem 1rem 1.1rem;
+  border-bottom: 10px solid #141312;
+  box-shadow: 0 3px 0 #d97757;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-color: #d97757 #141312;
+  scrollbar-width: thin;
+  overscroll-behavior-inline: contain;
+}
+
+.projects-grid::-webkit-scrollbar {
+  height: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+  background: #141312;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+  background: #d97757;
+  border: 2px solid #141312;
+}
+
+html[data-theme='light'] .projects-section {
+  background-color: #ebe7e1;
+  border-bottom-color: #b8b2aa;
+}
+
+html[data-theme='light'] .projects-title {
+  color: #272522;
+}
+
+html[data-theme='light'] .section-note {
+  color: #5e5952;
+}
+
+html[data-theme='light'] .projects-grid {
+  border-bottom-color: #b8b2aa;
+  box-shadow: 0 3px 0 #d8d1c8;
+  scrollbar-color: #d97757 #d8d1c8;
+}
+
+html[data-theme='light'] .projects-grid::-webkit-scrollbar-track {
+  background: #d8d1c8;
 }
 
 /* Mobile Responsive */
@@ -34,13 +99,13 @@
   }
 
   .projects-title {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 1rem 0 1.1rem;
   }
 }
 

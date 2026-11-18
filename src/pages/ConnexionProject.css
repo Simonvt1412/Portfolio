@@ -148,8 +148,8 @@
 }
  
 .driftveil-feature-card {
-  background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f7 100%);
-  border: 1px solid #d4e3f0;
+  background: #292624;
+  border: 1px solid #61584f;
   border-radius: 14px;
   padding: 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -204,7 +204,7 @@
  
 .driftveil-tech-pill {
   background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f7 100%);
-  color: #5b9fd1;
+  color: #f4b39b;
   padding: 0.4rem 1rem;
   border-radius: 20px;
   font-size: 0.85rem;

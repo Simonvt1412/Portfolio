@@ -68,32 +68,38 @@
 /* ---------- Metrics Bar ---------- */
 .ewaste-metrics-bar {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(180px, 220px));
+  justify-content: space-between;
   gap: 1rem;
   padding: 2rem 0;
   border-bottom: 1px solid #e0e4e8;
 }
 
 .ewaste-metric-card {
-  background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f7 100%);
-  border: 1px solid #d4e3f0;
-  border-radius: 12px;
-  padding: 1rem;
+  background: #292624;
+  border: 1px solid #61584f;
+  border-radius: 8px;
+  min-height: 82px;
+  height: 82px;
+  padding: 0.75rem 0.9rem;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  justify-content: flex-start;
+  gap: 0.25rem;
 }
 
 .ewaste-metric-label {
   font-size: 0.75rem;
+  line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #5b9fd1;
+  letter-spacing: 0.08em;
+  color: #f4b39b;
   font-weight: 700;
 }
 
 .ewaste-metric-value {
   font-size: 0.95rem;
+  line-height: 1.25;
   font-weight: 700;
   color: #1f2937;
 }
@@ -142,8 +148,8 @@
 .ewaste-stack-num {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #5b9fd1;
-  opacity: 0.8;
+  color: #272522;
+  opacity: 1;
   padding-top: 0.1rem;
 }
 

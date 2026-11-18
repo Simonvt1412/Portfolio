@@ -6,7 +6,7 @@ import './Navbar.css';
  * Simple top navigation bar with logo/name on the left and nav links on the right.
  * Responsive design that works on mobile and desktop.
  */
-export default function Navbar() {
+export default function Navbar({ isLightMode, onThemeToggle }) {
   const handleSmoothScroll = (e, targetId) => {
     // If on a different page, let the link work normally
     if (window.location.pathname !== '/') {
@@ -24,18 +24,18 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          Portfolio
+          SIMON<span>_VT</span>
         </Link>
         <div className="nav-links">
           <Link to="/" className="nav-link">
-            Home
+            Start
           </Link>
           <a
             href="/#projects"
             className="nav-link"
             onClick={(e) => handleSmoothScroll(e, 'projects')}
           >
-            Projects
+            Cartridges
           </a>
           <a
             href="/#contact"
@@ -44,6 +44,15 @@ export default function Navbar() {
           >
             Contact
           </a>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={onThemeToggle}
+            aria-label={`Switch to ${isLightMode ? 'dark' : 'light'} mode`}
+          >
+            <span aria-hidden="true">{isLightMode ? '◐' : '◑'}</span>
+            {isLightMode ? 'Dark' : 'Light'}
+          </button>
         </div>
       </div>
     </nav>

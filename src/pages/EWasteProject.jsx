@@ -9,13 +9,6 @@ import './EWasteProject.css';
 export default function EWasteProject() {
   const project = projectsData.find((p) => p.id === 5) || projectsData[0];
 
-  const highlightMetrics = [
-    { label: 'Award', value: '1st Place Winner' },
-    { label: 'Context', value: 'Cronos Group Hackathon' },
-    { label: 'Project Type', value: 'Pure Concept / Idea' },
-    { label: 'Phase', value: 'No further development' },
-  ];
-
   const features = [
     {
       title: 'Interactive Art Installations',
@@ -46,16 +39,6 @@ export default function EWasteProject() {
             This project was <strong>purely a conceptual idea</strong>. No technical or in-depth development was undertaken during this hackathon; the focus was entirely on the vision and strategic concept.
           </p>
         </div>
-      </section>
-
-      {/* Quick metrics bar */}
-      <section className="ewaste-metrics-bar">
-        {highlightMetrics.map((item) => (
-          <div key={item.label} className="ewaste-metric-card">
-            <span className="ewaste-metric-label">{item.label}</span>
-            <span className="ewaste-metric-value">{item.value}</span>
-          </div>
-        ))}
       </section>
 
       {/* Concept background */}

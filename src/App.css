@@ -12,13 +12,11 @@ body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Arial', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
-  color: #333333;
+  background-color: #f7f5f2;
+  color: #272522;
 }
 
 #root {
@@ -36,6 +34,724 @@ main {
   will-change: opacity, transform;
 }
 
+.scroll-reveal {
+  opacity: 1;
+  transform: translateY(0);
+  clip-path: inset(0 0 0 0);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  clip-path: inset(0 0 0 0);
+  animation: scrollSmoothIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms) both;
+}
+
+.hero-character-panel.scroll-reveal {
+  transform: translate(0, 0);
+}
+
+.hero-character-panel.scroll-reveal.is-visible {
+  transform: translate(0, 0);
+}
+
+.project-card-link.scroll-reveal {
+  transform: translateY(0) scale(1);
+}
+
+.project-card-link.scroll-reveal.is-visible {
+  transform: translateY(0) scale(1);
+}
+
+@keyframes scrollSmoothIn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pixelEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+  75% {
+    transform: translateY(-3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes themeFlash {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(1.18); }
+  100% { filter: brightness(1); }
+}
+
+.hero-status,
+.project-detail-content,
+.driftveil-hero,
+.ewaste-hero,
+.vondelmolen-hero {
+  animation: pixelEnter 0.65s steps(4, end) both;
+}
+
+.project-card-link:active,
+.link-item:active,
+.hero-cta:active,
+.hero-text-link:active,
+.theme-toggle:active,
+.nav-link:active,
+.driftveil-btn:active,
+.vondelmolen-btn:active,
+.ewaste-btn:active,
+.project-link:active,
+.back-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+  transition: transform 70ms steps(1, end), box-shadow 70ms steps(1, end);
+}
+
+button,
+a {
+  transition:
+    transform 0.16s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.16s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease;
+}
+
+button:hover,
+a:hover {
+  cursor: pointer;
+}
+
+.hero-character-panel {
+  transition:
+    transform 0.18s steps(3, end),
+    box-shadow 0.18s steps(3, end),
+    border-color 0.18s steps(3, end);
+}
+
+.hero-character-panel:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0 #d97757;
+}
+
+.hero-character-panel:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 #d97757;
+}
+
+html.theme-changing,
+html.theme-changing body,
+html.theme-changing .navbar,
+html.theme-changing .hero,
+html.theme-changing .projects-section,
+html.theme-changing .links-section {
+  animation: themeFlash 0.24s steps(2, end);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html[data-theme='dark'] body {
+  background-color: #1f1d1b;
+  color: #f7f5f2;
+  background-image: radial-gradient(rgba(247, 245, 242, 0.08) 1px, transparent 1px);
+}
+
+html[data-theme='dark'],
+html[data-theme='dark'] #root,
+html[data-theme='dark'] .page-transition,
+html[data-theme='dark'] .page-transition > main {
+  min-height: 100vh;
+  background: #1f1d1b;
+}
+
+html[data-theme='dark'] .navbar {
+  background-color: rgba(31, 29, 27, 0.94);
+  border-color: #f7f5f2;
+}
+
+html[data-theme='dark'] .navbar-logo,
+html[data-theme='dark'] .nav-link,
+html[data-theme='dark'] .hero-title,
+html[data-theme='dark'] .projects-title,
+html[data-theme='dark'] .project-title,
+html[data-theme='dark'] .links-title,
+html[data-theme='dark'] .link-item {
+  color: #f7f5f2;
+}
+
+html[data-theme='dark'] .nav-link:hover {
+  color: #f4b39b;
+}
+
+html[data-theme='dark'] .theme-toggle {
+  border-color: #f7f5f2;
+}
+
+html[data-theme='dark'] .hero {
+  background: #1f1d1b;
+  border-color: #f7f5f2;
+}
+
+html[data-theme='dark'] .hero-text-link,
+html[data-theme='dark'] .hero-stats span,
+html[data-theme='dark'] .character-level {
+  color: #c9c1b8;
+}
+
+html[data-theme='dark'] .hero-stats {
+  border-color: #61584f;
+}
+
+html[data-theme='dark'] .hero-character-panel {
+  border-color: #f7f5f2;
+  background:
+    linear-gradient(rgba(247, 245, 242, 0.05) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(247, 245, 242, 0.05) 2px, transparent 2px),
+    #292624;
+  box-shadow: 8px 8px 0 #d97757;
+}
+
+html[data-theme='dark'] .hero-description,
+html[data-theme='dark'] .hero-status,
+html[data-theme='dark'] .section-note,
+html[data-theme='dark'] .project-description,
+html[data-theme='dark'] .links-subtitle {
+  color: #c9c1b8;
+}
+
+html[data-theme='dark'] .projects-section {
+  background-color: #211f1d;
+  border-color: #f7f5f2;
+}
+
+html[data-theme='dark'] .project-card {
+  background-color: #292624;
+  border-color: #0e0d0c;
+}
+
+html[data-theme='dark'] .project-card:hover {
+  border-color: #f7f5f2;
+}
+
+html[data-theme='dark'] .links-section {
+  background: #1f1d1b;
+  border-color: #f7f5f2;
+}
+
+html[data-theme='dark'] .link-item {
+  background-color: #1f1d1b;
+  border-color: #f7f5f2;
+}
+
+html[data-theme='dark'] .link-item .link-icon {
+  filter: invert(1);
+}
+
+html[data-theme='dark'] .link-item:hover {
+  color: #f7f5f2;
+}
+
+html[data-theme='dark'] .availability-status {
+  color: #c9c1b8;
+}
+
+/* Project detail pages inherit the selected theme */
+html[data-theme='dark'] .project-detail,
+html[data-theme='dark'] .driftveil-page,
+html[data-theme='dark'] .ewaste-page,
+html[data-theme='dark'] .vondelmolen-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1f1d1b !important;
+  color: #f7f5f2;
+}
+
+html[data-theme='dark'] .project-detail-container,
+html[data-theme='dark'] .driftveil-page,
+html[data-theme='dark'] .ewaste-page,
+html[data-theme='dark'] .vondelmolen-page {
+  box-sizing: border-box;
+}
+
+html[data-theme='dark'] .project-detail-title,
+html[data-theme='dark'] .section-title,
+html[data-theme='dark'] .back-button,
+html[data-theme='dark'] .driftveil-title,
+html[data-theme='dark'] .driftveil-section-title,
+html[data-theme='dark'] .driftveil-feature-card h3,
+html[data-theme='dark'] .ewaste-title,
+html[data-theme='dark'] .ewaste-section-title,
+html[data-theme='dark'] .ewaste-stack-content h3,
+html[data-theme='dark'] .vondelmolen-title,
+html[data-theme='dark'] .vondelmolen-section-title,
+html[data-theme='dark'] .vondelmolen-stack-content h3,
+html[data-theme='dark'] .vondelmolen-metric-value {
+  color: #f7f5f2;
+}
+
+html[data-theme='dark'] .section-text,
+html[data-theme='dark'] .not-found p,
+html[data-theme='dark'] .driftveil-tagline,
+html[data-theme='dark'] .driftveil-body-text,
+html[data-theme='dark'] .driftveil-feature-card p,
+html[data-theme='dark'] .ewaste-tagline,
+html[data-theme='dark'] .ewaste-body-text,
+html[data-theme='dark'] .ewaste-stack-content p,
+html[data-theme='dark'] .vondelmolen-tagline,
+html[data-theme='dark'] .vondelmolen-body-text,
+html[data-theme='dark'] .vondelmolen-stack-content p {
+  color: #c9c1b8;
+}
+
+html[data-theme='dark'] .detail-content,
+html[data-theme='dark'] .gallery-section,
+html[data-theme='dark'] .gallery-placeholder,
+html[data-theme='dark'] .driftveil-feature-card,
+html[data-theme='dark'] .driftveil-hero-image,
+html[data-theme='dark'] .ewaste-metric-card,
+html[data-theme='dark'] .ewaste-stack-item,
+html[data-theme='dark'] .ewaste-badge,
+html[data-theme='dark'] .vondelmolen-metric-card,
+html[data-theme='dark'] .vondelmolen-stack-item,
+html[data-theme='dark'] .vondelmolen-badge {
+  background: #292624;
+  border-color: #61584f;
+  color: #f7f5f2;
+}
+
+html[data-theme='dark'] .tech-item,
+html[data-theme='dark'] .driftveil-tech-pill,
+html[data-theme='dark'] .driftveil-meta-pill,
+html[data-theme='dark'] .ewaste-tech-pill,
+html[data-theme='dark'] .ewaste-metric-label,
+html[data-theme='dark'] .vondelmolen-tech-pill,
+html[data-theme='dark'] .vondelmolen-metric-label,
+html[data-theme='dark'] .vondelmolen-badge,
+html[data-theme='dark'] .ewaste-badge {
+  background: #35312e;
+  color: #f4b39b;
+  border-color: #61584f;
+}
+
+html[data-theme='dark'] .project-link,
+html[data-theme='dark'] .driftveil-btn-primary,
+html[data-theme='dark'] .ewaste-btn-primary,
+html[data-theme='dark'] .vondelmolen-btn-primary {
+  background: #d97757;
+  color: #1f1d1b;
+  border-color: #d97757;
+  box-shadow: none;
+}
+
+html[data-theme='dark'] .driftveil-btn-secondary,
+html[data-theme='dark'] .vondelmolen-btn-secondary {
+  background: #292624;
+  color: #f4b39b;
+  border-color: #f4b39b;
+}
+
+html[data-theme='dark'] .section,
+html[data-theme='dark'] .driftveil-hero,
+html[data-theme='dark'] .driftveil-section,
+html[data-theme='dark'] .ewaste-metrics-bar,
+html[data-theme='dark'] .ewaste-section,
+html[data-theme='dark'] .vondelmolen-metrics-bar,
+html[data-theme='dark'] .vondelmolen-section,
+html[data-theme='dark'] .driftveil-back-link-wrapper {
+  border-color: #61584f;
+}
+
+/* Light project pages: replace legacy blue accents with neutral gray. */
+html[data-theme='light'] .project-detail,
+html[data-theme='light'] .driftveil-page,
+html[data-theme='light'] .ewaste-page,
+html[data-theme='light'] .vondelmolen-page {
+  background: #f7f5f2;
+  color: #272522;
+}
+
+html[data-theme='light'] .back-button,
+html[data-theme='light'] .project-detail-title,
+html[data-theme='light'] .section-title,
+html[data-theme='light'] .driftveil-eyebrow,
+html[data-theme='light'] .driftveil-title,
+html[data-theme='light'] .driftveil-section-title,
+html[data-theme='light'] .driftveil-feature-card h3,
+html[data-theme='light'] .driftveil-back-link,
+html[data-theme='light'] .ewaste-badge,
+html[data-theme='light'] .ewaste-title,
+html[data-theme='light'] .ewaste-section-title,
+html[data-theme='light'] .ewaste-stack-content h3,
+html[data-theme='light'] .ewaste-back-link,
+html[data-theme='light'] .vondelmolen-badge,
+html[data-theme='light'] .vondelmolen-title,
+html[data-theme='light'] .vondelmolen-section-title,
+html[data-theme='light'] .vondelmolen-stack-content h3,
+html[data-theme='light'] .vondelmolen-back-link,
+html[data-theme='light'] .vondelmolen-metric-value,
+html[data-theme='light'] .vondelmolen-metric-link {
+  color: #272522;
+}
+
+html[data-theme='light'] .section-text,
+html[data-theme='light'] .driftveil-tagline,
+html[data-theme='light'] .driftveil-body-text,
+html[data-theme='light'] .driftveil-feature-card p,
+html[data-theme='light'] .ewaste-tagline,
+html[data-theme='light'] .ewaste-body-text,
+html[data-theme='light'] .ewaste-stack-content p,
+html[data-theme='light'] .vondelmolen-tagline,
+html[data-theme='light'] .vondelmolen-body-text,
+html[data-theme='light'] .vondelmolen-stack-content p {
+  color: #5e5952;
+}
+
+html[data-theme='light'] .detail-content,
+html[data-theme='light'] .gallery-section,
+html[data-theme='light'] .gallery-placeholder,
+html[data-theme='light'] .driftveil-feature-card,
+html[data-theme='light'] .driftveil-meta-pill,
+html[data-theme='light'] .ewaste-metric-card,
+html[data-theme='light'] .ewaste-stack-item,
+html[data-theme='light'] .ewaste-badge,
+html[data-theme='light'] .vondelmolen-metric-card,
+html[data-theme='light'] .vondelmolen-stack-item,
+html[data-theme='light'] .vondelmolen-badge {
+  background: #ebe7e1;
+  border-color: #b8b2aa;
+  color: #272522;
+}
+
+html[data-theme='light'] .tech-item,
+html[data-theme='light'] .driftveil-tech-pill,
+html[data-theme='light'] .ewaste-tech-pill,
+html[data-theme='light'] .ewaste-metric-label,
+html[data-theme='light'] .vondelmolen-tech-pill,
+html[data-theme='light'] .vondelmolen-metric-label {
+  background: #d8d1c8;
+  color: #272522;
+  border-color: #b8b2aa;
+  box-shadow: none;
+}
+
+html[data-theme='light'] .project-link,
+html[data-theme='light'] .driftveil-btn-primary,
+html[data-theme='light'] .ewaste-btn-primary,
+html[data-theme='light'] .vondelmolen-btn-primary {
+  background: #ebe7e1;
+  color: #272522;
+  border-color: #272522;
+  box-shadow: 3px 3px 0 #c9c1b8;
+}
+
+html[data-theme='light'] .driftveil-btn-secondary,
+html[data-theme='light'] .vondelmolen-btn-secondary {
+  background: #f7f5f2;
+  color: #272522;
+  border-color: #b8b2aa;
+}
+
+html[data-theme='light'] .section,
+html[data-theme='light'] .driftveil-hero,
+html[data-theme='light'] .driftveil-section,
+html[data-theme='light'] .ewaste-metrics-bar,
+html[data-theme='light'] .ewaste-section,
+html[data-theme='light'] .vondelmolen-metrics-bar,
+html[data-theme='light'] .vondelmolen-section,
+html[data-theme='light'] .driftveil-back-link-wrapper {
+  border-color: #b8b2aa;
+}
+
+html[data-theme='light'] .ewaste-stack-num,
+html[data-theme='light'] .vondelmolen-stack-num {
+  color: #272522;
+  opacity: 1;
+}
+
+html[data-theme='light'] .ewaste-stack-item,
+html[data-theme='light'] .vondelmolen-stack-item,
+html[data-theme='light'] .driftveil-feature-card,
+html[data-theme='light'] .vondelmolen-metric-card,
+html[data-theme='light'] .ewaste-metric-card {
+  background: #ebe7e1;
+  border-color: #b8b2aa;
+  box-shadow: none;
+}
+
+/* Remove legacy blue accents from every custom project surface in dark mode. */
+html[data-theme='dark'] .driftveil-eyebrow,
+html[data-theme='dark'] .driftveil-section-title,
+html[data-theme='dark'] .driftveil-back-link,
+html[data-theme='dark'] .driftveil-tech-pill,
+html[data-theme='dark'] .driftveil-meta-pill,
+html[data-theme='dark'] .ewaste-badge,
+html[data-theme='dark'] .ewaste-metric-label,
+html[data-theme='dark'] .ewaste-section-title,
+html[data-theme='dark'] .ewaste-stack-num,
+html[data-theme='dark'] .ewaste-tech-pill,
+html[data-theme='dark'] .ewaste-back-link,
+html[data-theme='dark'] .vondelmolen-badge,
+html[data-theme='dark'] .vondelmolen-metric-label,
+html[data-theme='dark'] .vondelmolen-section-title,
+html[data-theme='dark'] .vondelmolen-stack-num,
+html[data-theme='dark'] .vondelmolen-tech-pill,
+html[data-theme='dark'] .vondelmolen-back-link,
+html[data-theme='dark'] .project-detail-title,
+html[data-theme='dark'] .section-title,
+html[data-theme='dark'] .back-button,
+html[data-theme='dark'] .not-found h1 {
+  color: #f4b39b !important;
+}
+
+html[data-theme='dark'] .driftveil-btn-primary,
+html[data-theme='dark'] .ewaste-btn-primary,
+html[data-theme='dark'] .vondelmolen-btn-primary,
+html[data-theme='dark'] .project-link {
+  background: #d97757 !important;
+  color: #1f1d1b !important;
+  border-color: #d97757 !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='dark'] .driftveil-feature-card,
+html[data-theme='dark'] .ewaste-metric-card,
+html[data-theme='dark'] .ewaste-stack-item,
+html[data-theme='dark'] .vondelmolen-metric-card,
+html[data-theme='dark'] .vondelmolen-stack-item,
+html[data-theme='dark'] .driftveil-tech-pill,
+html[data-theme='dark'] .ewaste-tech-pill,
+html[data-theme='dark'] .vondelmolen-tech-pill,
+html[data-theme='dark'] .driftveil-meta-pill,
+html[data-theme='dark'] .ewaste-badge,
+html[data-theme='dark'] .vondelmolen-badge {
+  background: #292624 !important;
+  border-color: #61584f !important;
+  box-shadow: none !important;
+}
+
+/* Final catch-all: override legacy gradients and borders on dark project cards. */
+html[data-theme='dark'] .driftveil-feature-card,
+html[data-theme='dark'] .ewaste-metric-card,
+html[data-theme='dark'] .ewaste-stack-item,
+html[data-theme='dark'] .vondelmolen-metric-card,
+html[data-theme='dark'] .vondelmolen-stack-item {
+  background: #292624 !important;
+  background-image: none !important;
+  border: 1px solid #61584f !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='dark'] .ewaste-metric-value,
+html[data-theme='dark'] .vondelmolen-metric-value,
+html[data-theme='dark'] .ewaste-stack-content h3,
+html[data-theme='dark'] .vondelmolen-stack-content h3,
+html[data-theme='dark'] .driftveil-feature-card h3 {
+  color: #f7f5f2 !important;
+}
+
+/* Complete dark-theme pass: override every remaining light custom-project surface. */
+html[data-theme='dark'] .driftveil-page,
+html[data-theme='dark'] .beestige-page,
+html[data-theme='dark'] .ewaste-page,
+html[data-theme='dark'] .vondelmolen-page,
+html[data-theme='dark'] .connexion-page,
+html[data-theme='dark'] .driftveil-hero,
+html[data-theme='dark'] .driftveil-section,
+html[data-theme='dark'] .ewaste-hero,
+html[data-theme='dark'] .ewaste-section,
+html[data-theme='dark'] .ewaste-metrics-bar,
+html[data-theme='dark'] .vondelmolen-hero,
+html[data-theme='dark'] .vondelmolen-section,
+html[data-theme='dark'] .vondelmolen-metrics-bar {
+  background: #1f1d1b !important;
+  background-image: none !important;
+  color: #f7f5f2 !important;
+}
+
+html[data-theme='dark'] .driftveil-hero-image,
+html[data-theme='dark'] .driftveil-feature-card,
+html[data-theme='dark'] .driftveil-gallery-item,
+html[data-theme='dark'] .ewaste-metric-card,
+html[data-theme='dark'] .ewaste-stack-item,
+html[data-theme='dark'] .ewaste-badge,
+html[data-theme='dark'] .vondelmolen-metric-card,
+html[data-theme='dark'] .vondelmolen-stack-item,
+html[data-theme='dark'] .vondelmolen-badge,
+html[data-theme='dark'] .driftveil-meta-pill {
+  background: #292624 !important;
+  background-image: none !important;
+  border-color: #61584f !important;
+  box-shadow: none !important;
+  color: #f7f5f2 !important;
+}
+
+html[data-theme='dark'] .driftveil-eyebrow,
+html[data-theme='dark'] .driftveil-title,
+html[data-theme='dark'] .driftveil-section-title,
+html[data-theme='dark'] .driftveil-feature-card h3,
+html[data-theme='dark'] .driftveil-back-link,
+html[data-theme='dark'] .ewaste-title,
+html[data-theme='dark'] .ewaste-section-title,
+html[data-theme='dark'] .ewaste-stack-content h3,
+html[data-theme='dark'] .ewaste-back-link,
+html[data-theme='dark'] .vondelmolen-title,
+html[data-theme='dark'] .vondelmolen-section-title,
+html[data-theme='dark'] .vondelmolen-stack-content h3,
+html[data-theme='dark'] .vondelmolen-back-link,
+html[data-theme='dark'] .vondelmolen-metric-value,
+html[data-theme='dark'] .vondelmolen-metric-link {
+  color: #f7f5f2 !important;
+}
+
+html[data-theme='dark'] .driftveil-tagline,
+html[data-theme='dark'] .driftveil-body-text,
+html[data-theme='dark'] .driftveil-feature-card p,
+html[data-theme='dark'] .ewaste-tagline,
+html[data-theme='dark'] .ewaste-body-text,
+html[data-theme='dark'] .ewaste-stack-content p,
+html[data-theme='dark'] .vondelmolen-tagline,
+html[data-theme='dark'] .vondelmolen-body-text,
+html[data-theme='dark'] .vondelmolen-stack-content p {
+  color: #c9c1b8 !important;
+}
+
+html[data-theme='dark'] .driftveil-hero,
+html[data-theme='dark'] .driftveil-section,
+html[data-theme='dark'] .ewaste-metrics-bar,
+html[data-theme='dark'] .ewaste-section,
+html[data-theme='dark'] .vondelmolen-metrics-bar,
+html[data-theme='dark'] .vondelmolen-section,
+html[data-theme='dark'] .driftveil-back-link-wrapper,
+html[data-theme='dark'] .ewaste-back-link-wrapper,
+html[data-theme='dark'] .vondelmolen-back-link-wrapper {
+  border-color: #61584f !important;
+}
+
+html[data-theme='dark'] .driftveil-tech-pill,
+html[data-theme='dark'] .driftveil-meta-pill,
+html[data-theme='dark'] .ewaste-tech-pill,
+html[data-theme='dark'] .ewaste-metric-label,
+html[data-theme='dark'] .ewaste-badge,
+html[data-theme='dark'] .vondelmolen-tech-pill,
+html[data-theme='dark'] .vondelmolen-metric-label,
+html[data-theme='dark'] .vondelmolen-badge {
+  background: #35312e !important;
+  background-image: none !important;
+  color: #f4b39b !important;
+  border-color: #61584f !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='dark'] .driftveil-btn-secondary,
+html[data-theme='dark'] .ewaste-btn-primary,
+html[data-theme='dark'] .vondelmolen-btn-secondary {
+  background: #292624 !important;
+  color: #f4b39b !important;
+  border-color: #f4b39b !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='dark'] .project-detail,
+html[data-theme='dark'] .project-detail-container,
+html[data-theme='dark'] .project-detail-content,
+html[data-theme='dark'] .detail-content,
+html[data-theme='dark'] .gallery-section,
+html[data-theme='dark'] .gallery-placeholder {
+  background: #1f1d1b !important;
+  background-image: none !important;
+  color: #f7f5f2 !important;
+  border-color: #61584f !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='dark'] .project-detail-title,
+html[data-theme='dark'] .section-title,
+html[data-theme='dark'] .not-found h1,
+html[data-theme='dark'] .back-button {
+  color: #f7f5f2 !important;
+}
+
+html[data-theme='dark'] .section-text,
+html[data-theme='dark'] .not-found p {
+  color: #c9c1b8 !important;
+}
+
+html[data-theme='dark'] .section,
+html[data-theme='dark'] .gallery-placeholder {
+  border-color: #61584f !important;
+}
+
+html[data-theme='dark'] .tech-item,
+html[data-theme='dark'] .project-link {
+  background: #35312e !important;
+  background-image: none !important;
+  color: #f4b39b !important;
+  border-color: #61584f !important;
+  box-shadow: none !important;
+}
+
+/* Final white-surface guards for project hero areas. */
+html[data-theme='dark'] .driftveil-page,
+html[data-theme='dark'] .beestigeTijdreizigers-page,
+html[data-theme='dark'] .connexion-page,
+html[data-theme='dark'] .driftveil-hero,
+html[data-theme='dark'] .driftveil-hero-content,
+html[data-theme='dark'] .driftveil-hero-image,
+html[data-theme='dark'] .driftveil-hero-image img,
+html[data-theme='dark'] .driftveil-gallery-item,
+html[data-theme='dark'] .driftveil-gallery-item img {
+  background: #1f1d1b !important;
+  background-image: none !important;
+  border-color: #61584f !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='dark'] .driftveil-eyebrow,
+html[data-theme='dark'] .driftveil-meta-pill {
+  background: #292624 !important;
+  color: #f4b39b !important;
+  border-color: #61584f !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='dark'] .driftveil-btn-secondary,
+html[data-theme='dark'] .vondelmolen-btn-secondary,
+html[data-theme='dark'] .driftveil-btn-primary,
+html[data-theme='dark'] .vondelmolen-btn-primary,
+html[data-theme='dark'] .ewaste-btn-primary {
+  background: #292624 !important;
+  color: #f4b39b !important;
+  border-color: #f4b39b !important;
+  box-shadow: none !important;
+}
+
 /* Typography */
 h1,
 h2,
@@ -43,22 +759,22 @@ h3,
 h4,
 h5,
 h6 {
-  color: #5b9fd1;
+  color: #272522;
 }
 
 p {
-  color: #666666;
+  color: #5e5952;
   line-height: 1.6;
 }
 
 a {
-  color: #5b9fd1;
+  color: #b9573d;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #4a7db5;
+  color: #d97757;
 }
 
 /* Responsive baseline */

@@ -10,13 +10,6 @@ import './VondelmolenProject.css';
 export default function VondelmolenProject() {
   const project = projectsData.find((p) => p.id === 6) || projectsData[0];
 
-  const highlightMetrics = [
-    { label: 'Context', value: 'End-of-Year Exam' },
-    { label: 'Team Concept', value: '6 Team Members' },
-    { label: 'Web Collaboration', value: 'Jarno Pennoit' },
-    { label: 'Live Demo', value: 'vondelmolen.vercel.app' },
-  ];
-
   const features = [
     {
       title: 'Student-Focused Campaign Strategy',
@@ -56,27 +49,6 @@ export default function VondelmolenProject() {
             <a href="#exam-details" className="vondelmolen-btn vondelmolen-btn-secondary">Read Story</a>
           </div>
         </div>
-      </section>
-
-      {/* Quick Metrics Bar */}
-      <section className="vondelmolen-metrics-bar">
-        {highlightMetrics.map((item) => (
-          <div key={item.label} className="vondelmolen-metric-card">
-            <span className="vondelmolen-metric-label">{item.label}</span>
-            {item.label === 'Live Demo' ? (
-              <a 
-                href="https://vondelmolen.vercel.app/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="vondelmolen-metric-link"
-              >
-                {item.value}
-              </a>
-            ) : (
-              <span className="vondelmolen-metric-value">{item.value}</span>
-            )}
-          </div>
-        ))}
       </section>
 
       {/* Project Background / Story */}

@@ -1,20 +1,17 @@
 :root {
-  /* Color Scheme - Light Blue and White */
-  --primary-blue: #5b9fd1;
-  --primary-blue-dark: #4a7db5;
-  --bg-white: #ffffff;
-  --bg-light: #f5f7fa;
-  --text-dark: #1a1a2e;
-  --text-medium: #4a4a6a;
-  --text-light: #7a7a9e;
-  --border-color: #e0e4e8;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  --shadow-hover: 0 8px 24px rgba(91, 159, 209, 0.25);
-  --shadow-lg: 0 10px 32px rgba(0, 0, 0, 0.15);
+  --primary-blue: #d97757;
+  --primary-blue-dark: #b9573d;
+  --bg-white: #f7f5f2;
+  --bg-light: #ebe7e1;
+  --text-dark: #272522;
+  --text-medium: #5e5952;
+  --text-light: #8d867d;
+  --border-color: #d8d1c8;
+  --shadow: 0 4px 0 rgba(39, 37, 34, 0.12);
+  --shadow-hover: 0 8px 0 rgba(39, 37, 34, 0.18);
+  --shadow-lg: 0 12px 0 rgba(39, 37, 34, 0.16);
 
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Arial', 'Helvetica Neue', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
@@ -35,10 +32,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   background-color: var(--bg-white);
+  background-image: radial-gradient(rgba(39, 37, 34, 0.08) 1px, transparent 1px);
+  background-size: 4px 4px;
 }
 
 html,
@@ -51,7 +54,7 @@ body,
   width: 100%;
 }
 .counter {
-  font-family: var(--mono);
+  font-family: monospace;
   display: inline-flex;
   border-radius: 4px;
   color: var(--text-h);

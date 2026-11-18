@@ -11,11 +11,19 @@ export default function ProjectsGrid() {
   return (
     <section id="projects" className="projects-section">
       <div className="projects-container">
-        <h2 className="projects-title">Projects</h2>
+        <div className="section-heading">
+          <p className="section-kicker">02 // SELECT YOUR CARTRIDGE</p>
+          <h2 className="projects-title">The collection</h2>
+          <p className="section-note">A few things I&apos;ve built, designed, and shipped.</p>
+        </div>
         <div className="projects-grid">
           {/* Map over projects from JSON file - add new projects by editing projects.json */}
-          {projectsData.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {projectsData.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              position={index + 1}
+            />
           ))}
         </div>
       </div>

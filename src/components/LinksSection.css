@@ -1,8 +1,8 @@
 /* Links Section Styling */
 .links-section {
-  background: linear-gradient(180deg, white 0%, #f5f7fa 100%);
-  padding: 5rem 2rem;
-  border-top: 1px solid #e0e4e8;
+  background: #f7f5f2;
+  padding: 6rem 2rem;
+  border-top: 2px solid #272522;
 }
 
 .links-container {
@@ -12,42 +12,66 @@
 }
 
 .links-title {
-  font-size: 2.5rem;
-  color: #5b9fd1;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 3rem;
+  color: #272522;
   margin-top: 0;
   margin-bottom: 0.75rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-weight: 400;
+  letter-spacing: -0.05em;
 }
 
 .links-subtitle {
-  color: #4a4a6a;
+  color: #5e5952;
   font-size: 1.1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.75rem;
   font-weight: 500;
 }
 
-/* Links List */
+.availability-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 2rem;
+  color: #5e5952;
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.availability-pixel {
+  width: 8px;
+  height: 8px;
+  background: #55a66f;
+  box-shadow: 2px 2px 0 #272522;
+  animation: availabilityBlink 1.2s steps(2, end) infinite;
+}
+
 .links-list {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .link-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1.2rem 1.5rem;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  height: 140px;
+  padding: 1rem;
   text-decoration: none;
-  color: #1a1a2e;
-  border-radius: 10px;
-  border: 1px solid #e0e4e8;
-  transition: all 0.3s ease;
-  background-color: white;
+  color: #272522;
+  border-radius: 3px;
+  border: 2px solid #272522;
+  transition: transform 0.12s steps(2, end), box-shadow 0.12s steps(2, end);
+  background-color: #f7f5f2;
 }
 
 .email-link {
@@ -56,47 +80,59 @@
   cursor: pointer;
 }
 
-.email-popup {
-  position: absolute;
-  top: calc(100% + 0.7rem);
-  left: 50%;
-  z-index: 2;
-  padding: 0.7rem 0.9rem;
-  background: #1a1a2e;
-  color: white;
-  border-radius: 6px;
-  box-shadow: 0 6px 18px rgba(26, 26, 46, 0.2);
-  font-size: 0.82rem;
-  white-space: nowrap;
-  transform: translateX(-50%);
-}
-
-.email-popup::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  background: #1a1a2e;
-  transform: translateX(-50%) rotate(45deg);
-}
-
 .link-item:hover {
-  background-color: #f0f5fa;
-  color: #5b9fd1;
-  border-color: #5b9fd1;
-  transform: translateY(-6px);
-  box-shadow: 0 8px 24px rgba(91, 159, 209, 0.2);
+  background-color: #d97757;
+  color: #f7f5f2;
+  border-color: #272522;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 #D9794F;
+}
+
+.link-item:hover .link-icon {
+  animation: iconPixelPop 0.32s steps(3, end);
+}
+
+@keyframes iconPixelPop {
+  50% {
+    transform: translateY(-3px) scale(1.08);
+  }
+}
+
+html[data-theme='light'] .links-section {
+  border-top-color: #b8b2aa;
+}
+
+html[data-theme='light'] .links-title,
+html[data-theme='light'] .availability-status {
+  color: #272522;
+}
+
+html[data-theme='light'] .link-item {
+  border-color: #b8b2aa;
+  background-color: #f7f5f2;
+  box-shadow: 0 3px 0 #d8d1c8;
+}
+
+html[data-theme='light'] .link-item:hover {
+  background-color: #ebe7e1;
+  border-color: #272522;
+  color: #272522;
+  box-shadow: 4px 4px 0 #c9c1b8;
 }
 
 .link-icon {
-  font-size: 1.8rem;
+  display: block;
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .link-text {
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
 /* Mobile Responsive */
@@ -110,18 +146,22 @@
   }
 
   .links-list {
-    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .link-item {
-    padding: 0.8rem 1rem;
-  }
-
-  .link-icon {
-    font-size: 1.5rem;
+    height: 120px;
+    padding: 0.75rem;
   }
 
   .link-text {
     font-size: 0.85rem;
+  }
+}
+
+@keyframes availabilityBlink {
+  50% {
+    opacity: 0.35;
   }
 }
