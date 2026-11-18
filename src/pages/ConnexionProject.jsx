@@ -9,16 +9,18 @@ import './ConnexionProject.css';
  */
 export default function ConnexionProject() {
   const heroImage = {
-    src: '/Connexion/Visual.png',
+    src: '/Connexion/Visual.webp',
     alt: 'Visual concept art for The ConneXion installation',
+    width: 995,
+    height: 566,
   };
  
   const visualDesign = [
-    { src: '/Connexion/UI.png', alt: 'UI design for the exoplanet info screen' },
-    { src: '/Connexion/Visual.png', alt: 'Visual concept art for the installation' },
-    { src: '/Connexion/Planet1.png', alt: '3D planet render created for the exoplanet starfield' },
-    { src: '/Connexion/Planet2.png', alt: 'Second 3D planet render created for the exoplanet starfield' },
-    { src: '/Connexion/Planet3.png', alt: 'Large green 3D planet render with a smaller nearby planet' },
+    { src: '/Connexion/UI.webp', alt: 'UI design for the exoplanet info screen', width: 897, height: 502 },
+    { src: '/Connexion/Visual.webp', alt: 'Visual concept art for the installation', width: 995, height: 566 },
+    { src: '/Connexion/Planet1.webp', alt: '3D planet render created for the exoplanet starfield', width: 1426, height: 732 },
+    { src: '/Connexion/Planet2.webp', alt: 'Second 3D planet render created for the exoplanet starfield', width: 1400, height: 736 },
+    { src: '/Connexion/Planet3.webp', alt: 'Large green 3D planet render with a smaller nearby planet', width: 1410, height: 752 },
   ];
  
   const techStack = [
@@ -90,7 +92,13 @@ export default function ConnexionProject() {
           </div>
         </div>
         <div className="driftveil-hero-image">
-          <img src={heroImage.src} alt={heroImage.alt} />
+          <img
+            src={heroImage.src}
+            alt={heroImage.alt}
+            width={heroImage.width}
+            height={heroImage.height}
+            decoding="async"
+          />
         </div>
       </section>
  
@@ -143,7 +151,14 @@ export default function ConnexionProject() {
         <div className="driftveil-gallery">
           {visualDesign.map((visual) => (
             <div key={visual.src} className="driftveil-gallery-item">
-              <img src={visual.src} alt={visual.alt} />
+              <img
+                src={visual.src}
+                alt={visual.alt}
+                width={visual.width}
+                height={visual.height}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           ))}
         </div>

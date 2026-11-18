@@ -8,7 +8,7 @@ import ProjectDetailPage from './pages/ProjectDetailPage';
 import DriftveilProject from './pages/DriftveilProject';
 import EWasteProject from './pages/EWasteProject';
 import VondelmolenProject from './pages/VondelmolenProject';
-import BeestigeTijdreizigers from './pages/BeestigeTijdreizigers'; // Pas het pad aan indien nodig (bijv. ./pages/BeestigeTijdreizigers)
+import BeestigeTijdreizigers from './pages/BeestigeTijdreizigers';
 import ConnexionProject from './pages/ConnexionProject';
 import './App.css';
 
@@ -18,31 +18,27 @@ function PageTransition() {
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const context = gsap.context(() => {
-      gsap.fromTo(
-        pageRef.current,
-        { autoAlpha: 0, y: 12 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.55,
-          ease: 'power2.out',
-        }
-      );
+    let context;
+    if (!prefersReducedMotion) {
+      context = gsap.context(() => {
+        gsap.fromTo(
+          pageRef.current,
+          { autoAlpha: 0, y: 12 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.55,
+            ease: 'power2.out',
+          }
+        );
+      }, pageRef);
+    }
 
-      gsap.fromTo(
-        '.page-transition h1, .page-transition .hero-content',
-        { opacity: 0, y: 10 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.05,
-          ease: 'power2.out',
-        }
-      );
-    }, pageRef);
+    if (prefersReducedMotion) {
+      return () => context?.revert();
+    }
 
     const revealTargets = pageRef.current?.querySelectorAll(
       '.hero-content, .hero-character-panel, .section-heading, .project-card-link, .links-list, .availability-status, .project-detail-content, .project-header, .gallery-section, .detail-content, .section, .driftveil-hero, .driftveil-section, .driftveil-feature-card, .ewaste-hero, .ewaste-metrics-bar, .ewaste-section, .ewaste-stack-item, .ewaste-tech-list, .vondelmolen-hero, .vondelmolen-metrics-bar, .vondelmolen-section, .vondelmolen-stack-item, .vondelmolen-tech-list'

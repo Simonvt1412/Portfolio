@@ -7,14 +7,12 @@ import './DriftveilProject.css';
  * Not driven by projects.json — this page is hand-built so it can look
  * different from the other (generic) project detail pages.
  *
- * TODO: swap placeholder image paths below with your real screenshots
- * once you've decided on final file names/locations.
  */
 export default function DriftveilProject() {
   const screenshots = [
-    { src: '/Driftveil/Screenshot1-Noivern.png', alt: 'Flying Noivern over the Driftveil docks and cliffside path' },
-    { src: '/Driftveil/Screenshot2-Ditto.png', alt: 'Ditto crowd gathered near the Driftveil battle platform' },
-    { src: '/Driftveil/Screenshot3-Scizor.png', alt: 'Twin Scizor battling on the arena platform' },
+    { src: '/Driftveil/Screenshot1-Noivern.webp', alt: 'Flying Noivern over the Driftveil docks and cliffside path', width: 1303, height: 1078 },
+    { src: '/Driftveil/Screenshot2-Ditto.webp', alt: 'Ditto crowd gathered near the Driftveil battle platform', width: 1317, height: 1078 },
+    { src: '/Driftveil/Screenshot3-Scizor.webp', alt: 'Twin Scizor battling on the arena platform', width: 1600, height: 511 },
   ];
  
   const techStack = ['React', 'Three.js', 'React Three Fiber', 'Rapier Physics', 'Vite'];
@@ -83,7 +81,13 @@ export default function DriftveilProject() {
           </div>
         </div>
         <div className="driftveil-hero-image">
-          <img src={screenshots[0].src} alt={screenshots[0].alt} />
+          <img
+            src={screenshots[0].src}
+            alt={screenshots[0].alt}
+            width={screenshots[0].width}
+            height={screenshots[0].height}
+            decoding="async"
+          />
         </div>
       </section>
  
@@ -123,7 +127,14 @@ export default function DriftveilProject() {
         <div className="driftveil-gallery">
           {screenshots.map((shot) => (
             <div key={shot.src} className="driftveil-gallery-item">
-              <img src={shot.src} alt={shot.alt} />
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                width={shot.width}
+                height={shot.height}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           ))}
         </div>

@@ -6,11 +6,11 @@ import './BeestigeTijdreizigers.css';
  * Standalone, custom-styled case study page for the Beestige Tijdreizigers project.
  */
 export default function BeestigeTijdreizigers() {
-  const heroImage = { src: '/Kina/kina_logo.png', alt: 'House of Kina logo' };
+  const heroImage = { src: '/Kina/kina_logo.webp', alt: 'House of Kina logo', width: 641, height: 312 };
 
   const galleryScreenshots = [
-    { src: '/Kina/image.png', alt: 'Team Quartz around the created installation' },
-    { src: '/Kina/Kina.jpg', alt: 'The back and electronics of the system' },
+    { src: '/Kina/image.webp', alt: 'Team Quartz around the created installation', width: 800, height: 600 },
+    { src: '/Kina/Kina.webp', alt: 'The back and electronics of the system', width: 1600, height: 1200 },
   ];
 
   const techStack = ['Audio Design', 'Character Design', 'Physical Fabrication', 'Laser Cutting / Maker', 'Prototyping'];
@@ -60,7 +60,13 @@ export default function BeestigeTijdreizigers() {
           </div>
         </div>
         <div className="driftveil-hero-image">
-          <img src={heroImage.src} alt={heroImage.alt} />
+          <img
+            src={heroImage.src}
+            alt={heroImage.alt}
+            width={heroImage.width}
+            height={heroImage.height}
+            decoding="async"
+          />
         </div>
       </section>
 
@@ -94,7 +100,14 @@ export default function BeestigeTijdreizigers() {
         <div className="driftveil-gallery">
           {galleryScreenshots.map((shot) => (
             <div key={shot.src} className="driftveil-gallery-item">
-              <img src={shot.src} alt={shot.alt} />
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                width={shot.width}
+                height={shot.height}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           ))}
         </div>

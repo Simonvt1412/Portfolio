@@ -8,11 +8,6 @@
   z-index: 1;
 }
 
-.project-card-link:hover {
-  flex-basis: 360px;
-  z-index: 5;
-}
-
 .project-card {
   position: relative;
   height: 520px;
@@ -24,12 +19,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 13px 0 #d97757;
-  border-color: #f7f5f2;
 }
 
 .project-card-link:active .project-card {
@@ -202,11 +191,6 @@ html[data-theme='light'] .project-card {
   box-shadow: 0 5px 0 #b8b2aa;
 }
 
-html[data-theme='light'] .project-card:hover {
-  border-color: #272522;
-  box-shadow: 0 13px 0 #d8d1c8;
-}
-
 html[data-theme='light'] .cartridge-top {
   background: #272522;
   color: #f7f5f2;
@@ -249,35 +233,73 @@ html[data-theme='light'] .tech-tag {
   border-color: #d8d1c8;
 }
 
-.project-card-link:hover .project-info {
-  min-height: 78%;
+.project-card-link:focus-visible {
+  outline: 3px solid #d97757;
+  outline-offset: 4px;
+  z-index: 5;
 }
 
-.project-card-link:hover .project-type,
-.project-card-link:hover .project-description,
-.project-card-link:hover .tech-tags {
-  opacity: 1;
-  max-height: 220px;
-}
+@media (hover: hover) and (pointer: fine) {
+  .project-card-link:hover,
+  .project-card-link:focus-visible,
+  .project-card-link:focus-within {
+    flex-basis: 360px;
+    z-index: 5;
+  }
 
-.project-card-link:hover .project-title {
-  writing-mode: horizontal-tb;
-  transform: none;
-  max-height: none;
-}
+  .project-card-link:hover .project-card,
+  .project-card-link:focus-visible .project-card,
+  .project-card-link:focus-within .project-card {
+    transform: translateY(-8px);
+    box-shadow: 0 13px 0 #d97757;
+    border-color: #f7f5f2;
+  }
 
-.project-card-link:hover .play-label {
-  opacity: 1;
+  .project-card-link:hover .project-info,
+  .project-card-link:focus-visible .project-info,
+  .project-card-link:focus-within .project-info {
+    min-height: 78%;
+  }
+
+  .project-card-link:hover .project-type,
+  .project-card-link:hover .project-description,
+  .project-card-link:hover .tech-tags,
+  .project-card-link:focus-visible .project-type,
+  .project-card-link:focus-visible .project-description,
+  .project-card-link:focus-visible .tech-tags,
+  .project-card-link:focus-within .project-type,
+  .project-card-link:focus-within .project-description,
+  .project-card-link:focus-within .tech-tags {
+    opacity: 1;
+    max-height: 220px;
+  }
+
+  .project-card-link:hover .project-title,
+  .project-card-link:focus-visible .project-title,
+  .project-card-link:focus-within .project-title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    max-height: none;
+  }
+
+  .project-card-link:hover .play-label,
+  .project-card-link:focus-visible .play-label,
+  .project-card-link:focus-within .play-label {
+    opacity: 1;
+  }
+
+  html[data-theme='light'] .project-card-link:hover .project-card,
+  html[data-theme='light'] .project-card-link:focus-visible .project-card,
+  html[data-theme='light'] .project-card-link:focus-within .project-card {
+    border-color: #272522;
+    box-shadow: 0 13px 0 #d8d1c8;
+  }
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .project-card-link {
     flex: 0 0 190px;
-  }
-
-  .project-card-link:hover {
-    flex-basis: 300px;
   }
 
   .project-card {
@@ -316,5 +338,36 @@ html[data-theme='light'] .tech-tag {
 
   .project-description {
     font-size: 0.9rem;
+  }
+}
+
+@media (hover: none) {
+  .project-card-link,
+  .project-card-link:hover,
+  .project-card-link:focus-visible,
+  .project-card-link:focus-within {
+    flex-basis: 78vw;
+  }
+
+  .project-card-link .project-card {
+    height: 480px;
+  }
+
+  .project-card-link .project-info {
+    min-height: 72%;
+  }
+
+  .project-card-link .project-title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    max-height: none;
+  }
+
+  .project-card-link .project-type,
+  .project-card-link .project-description,
+  .project-card-link .tech-tags,
+  .project-card-link .play-label {
+    opacity: 1;
+    max-height: 220px;
   }
 }

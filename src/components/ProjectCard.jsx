@@ -36,9 +36,14 @@ export default function ProjectCard({ project, position }) {
         <div className="project-image-placeholder">
           {hasRealImage ? (
             <img
-              src={project.image}
+              src={project.thumb || project.image}
               alt={project.title}
               className="project-image"
+              width={project.imageWidth}
+              height={project.imageHeight}
+              loading="lazy"
+              decoding="async"
+              style={{ objectPosition: project.thumbPosition || 'center' }}
             />
           ) : (
             <span className="image-text">

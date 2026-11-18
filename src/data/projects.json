@@ -14,11 +14,15 @@
       "Rapier",
       "Vite"
     ],
-    "image": "/Driftveil/Screenshot1-Noivern.png",
+    "image": "/Driftveil/Screenshot1-Noivern.webp",
+    "thumb": "/Driftveil/Screenshot1-Noivern.webp",
+    "thumbPosition": "center",
+    "imageWidth": 1303,
+    "imageHeight": 1078,
     "gallery": [
-      "/Driftveil/Screenshot1-Noivern.png",
-      "/Driftveil/Screenshot2-Ditto.png",
-      "/Driftveil/Screenshot3-Scizor.png"
+      "/Driftveil/Screenshot1-Noivern.webp",
+      "/Driftveil/Screenshot2-Ditto.webp",
+      "/Driftveil/Screenshot3-Scizor.webp"
     ],
     "links": {
       "github": "https://github.com/Simonvt1412/driftveil-city-website.git",
@@ -40,11 +44,13 @@
       "Sensor Integration",
       "Mobile App Concept"
     ],
-    "image": "HTF/htf.jpg",
+    "image": "/HTF/htf.webp",
+    "thumb": "/HTF/htf.webp",
+    "thumbPosition": "center",
+    "imageWidth": 1200,
+    "imageHeight": 630,
     "gallery": [
-      "/EWaste/Hero-Trail.png",
-      "/EWaste/Concept-Water.png",
-      "/EWaste/Interaction-People.png"
+      "/HTF/htf.webp"
     ],
     "links": {
       "github": "",
@@ -66,7 +72,11 @@
       "Storytelling",
       "UI/UX"
     ],
-    "image": "/Vondelmolen/vm.jpg",
+    "image": "/Vondelmolen/vm.webp",
+    "thumb": "/Vondelmolen/vm.webp",
+    "thumbPosition": "center",
+    "imageWidth": 447,
+    "imageHeight": 447,
     "gallery": [],
     "links": {
       "github": "",
@@ -87,10 +97,14 @@
       "Hardware Integration",
       "Physical Computing"
     ],
-    "image": "/Kina/kina_logo.png",
+    "image": "/Kina/kina_logo.webp",
+    "thumb": "/Kina/kina_logo.webp",
+    "thumbPosition": "center",
+    "imageWidth": 641,
+    "imageHeight": 312,
     "gallery": [
-      "/Kina/image.png",
-      "/Kina/Kina.jpg"
+      "/Kina/image.webp",
+      "/Kina/Kina.webp"
     ],
     "links": {
       "github": "",
@@ -115,10 +129,14 @@
     "WebSockets",
     "Blender"
   ],
-  "image": "/Connexion/Floralien-logo.png",
+  "image": "/Connexion/Floralien-logo.webp",
+  "thumb": "/Connexion/Floralien-logo.webp",
+  "thumbPosition": "center",
+  "imageWidth": 197,
+  "imageHeight": 168,
   "gallery": [
-    "/Connexion/UI.png",
-    "/Connexion/Visual.png"
+    "/Connexion/UI.webp",
+    "/Connexion/Visual.webp"
   ],
   "links": {
     "github": "https://github.com/gdmgent-digitalproductstudio/dps2-project-1-ruimteverkenners",

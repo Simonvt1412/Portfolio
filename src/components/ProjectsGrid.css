@@ -114,3 +114,23 @@ html[data-theme='light'] .projects-grid::-webkit-scrollbar-track {
     gap: 1rem;
   }
 }
+
+@media (hover: none) {
+  .projects-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 78vw;
+    scroll-snap-type: x mandatory;
+  }
+
+  .project-card-link {
+    flex: 0 0 78vw;
+    scroll-snap-align: start;
+  }
+
+  .project-card-link:hover,
+  .project-card-link:focus-visible,
+  .project-card-link:focus-within {
+    flex-basis: 78vw;
+  }
+}
